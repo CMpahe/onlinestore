@@ -1,3 +1,5 @@
+
+
 body {
     padding: 0;
     margin: 0;
@@ -18,7 +20,7 @@ body {
     width: auto;
     justify-content: center;
     padding: 10px;
-    margin: 30px 40px;
+    margin: 2rem 2.5rem;
     flex-direction: row;
     height: fit-content;
     gap: 15px;
@@ -140,32 +142,32 @@ grid-template-columns: auto auto auto;
 }
 
 @media (max-width: 700px) {
-    .img-container {
-        width: 8rem;
+    html {
+        font-size: 9px;
     }
-    .description{
-        font-size: 0.6rem;
-    }
-    .search-container {
-        font-size: 0.9rem;
-    }
-    .filter-selection{
-        font-size: 0.9rem;
-    }
+
     .products-container{
         grid-template-columns: auto auto auto;
+    }
+    .search-container{
+        font-size: 2rem;
+        margin: 5rem 5.5rem;
+    }
+    #search-input {
+        max-width: 50rem;
     }
     .buttons{
         position: fixed;
         bottom: 0;
         margin-bottom: 0;
         background-color: rgb(106, 86, 185);
-        padding: 0.8rem 1.1rem;
+        padding: 1.1rem 1.1rem;
     }
     .filter-selection {
         background-color: rgb(106, 86, 185);
         border-color: white;
         color: white;
+        font-size: 2rem;
     }
     .active {
         background-color: white;
@@ -173,10 +175,13 @@ grid-template-columns: auto auto auto;
     }
 }
 
-@media (max-width: 530px){
-    .img-container {
-        width: 8rem;
+@media (max-width: 615px){
+    html {
+        font-size: 7px;
     }
+}
+
+@media (max-width: 530px){
     .products-container{
         grid-template-columns: auto auto;
     }
@@ -186,24 +191,13 @@ grid-template-columns: auto auto auto;
     }
 }
 
-@media (max-width: 430px){
-    .filter-selection{
-        font-size: 0.7rem;
-    }
-    .products-container{
-        grid-template-columns: auto auto;
+@media (max-width:380px){
+    html {
+        font-size: 7px;
     }
 }
-
-@media (max-width:380px){
-    
-    .products-container{
-        grid-template-columns: auto auto;
-    }
-    .img-container {
-        width: 6.8rem;
-    }
-    .description {
-        font-size: 0.5rem;
+@media (max-width:320px){
+    html {
+        font-size: 6px;
     }
 }
