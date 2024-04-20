@@ -129,6 +129,7 @@ grid-template-columns: auto auto auto;
 
 .description {
     margin: 0.5rem 0 0 0;
+    width: 18rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
     font-size: 1.2rem;
@@ -182,12 +183,16 @@ grid-template-columns: auto auto auto;
 }
 
 @media (max-width: 530px){
-    .products-container{
-        grid-template-columns: auto auto;
-    }
     .products-container {
         column-gap: 5px;
         row-gap: 12px;
+        grid-template-columns: auto auto;
+    }
+    .filter-selection {
+        font-size: 1.8rem;
+    }
+    .store-body{
+        padding-bottom: 28rem;
     }
 }
 
