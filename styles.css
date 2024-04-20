@@ -196,6 +196,9 @@ grid-template-columns: auto auto auto;
 @media (max-width:380px){
     
     .products-container{
-        grid-template-columns: auto;
+        grid-template-columns: auto auto;
+    }
+    .img-container {
+        width: 6.8rem;
     }
 }
