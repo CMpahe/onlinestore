@@ -93,7 +93,7 @@ grid-template-columns: auto auto auto;
 
 .card {
     width: fit-content;
-    padding: 1.1rem 1.1rem 2.2rem 1.1rem;
+    padding: 1.1rem;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.722);
     display: flex;
@@ -113,22 +113,24 @@ grid-template-columns: auto auto auto;
 }
 
 .img-container {
+    display: flex;
     width: 18rem;
+    height: 90%;
     box-sizing: border-box;
-    object-fit: cover;
+    overflow: hidden;
 }
 
 .img-container img {
     width: 100%;
+    align-self: center;
 }
 
 .description {
-    margin: 0;
-    position: absolute;
-    bottom: 2%;
+    margin: 0.5rem 0 0 0;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    text-wrap: wrap;
 }
 
 @media(max-width: 1020px) {
@@ -200,5 +202,8 @@ grid-template-columns: auto auto auto;
     }
     .img-container {
         width: 6.8rem;
+    }
+    .description {
+        font-size: 0.5rem;
     }
 }
