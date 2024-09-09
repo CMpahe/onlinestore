@@ -20,7 +20,7 @@ for (let i of products) {
     productsContainer.appendChild(card);
 }
 
-function filterItem(value){
+const filterItem = (value) => {
     // Compare to see which button was pressed to add the class active
     let buttons = document.querySelectorAll(".filter-selection");
     buttons.forEach((button) => {
@@ -49,6 +49,14 @@ function filterItem(value){
         })
     }
 }
+
+const buttons = document.querySelectorAll('.filter-selection')
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        filterItem(button.innerHTML)
+    })
+})
 
 // Search button click
 
