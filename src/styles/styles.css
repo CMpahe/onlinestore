@@ -3,19 +3,21 @@ body {
     margin: 0;
 }
 
-.store-body{
+.store-body{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
     width:100%;
     min-height: 100vh;
-    display: inline-block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding-bottom: 20rem;
 }
 
 .search-container{
     display: flex;
-    width: auto;
+    width: 80%;
+    max-width: 600px;
     justify-content: center;
     padding: 10px;
     margin: 2rem 2.5rem;
@@ -26,7 +28,7 @@ body {
 }
 
 #search-input {
-    max-width: 30rem;
+    width: 70%;
     flex: 1;
     border: 0;
     border-bottom: 3px solid gray;
@@ -41,7 +43,7 @@ body {
 
 #search-btn {
     border: 0;
-    padding: 10px 20px;
+    padding: min(3%, 10px) min(8%, 20px);
     background-color: rgb(90, 70, 172);
     color: white;
     border-radius: 5px;
@@ -86,14 +88,18 @@ body {
 
 .products-container {
 display: grid;
-justify-content: space-evenly;
+grid-template-columns: repeat(auto-fill, minmax(10rem, 15rem));
+width: 80%;
+
+column-gap: 2%;
+justify-content: space-around;
 row-gap: 45px;
-grid-template-columns: auto auto auto;
 }
 
 .card {
-    width: fit-content;
-    padding: 1.1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8%;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.722);
     display: flex;
@@ -114,8 +120,8 @@ grid-template-columns: auto auto auto;
 
 .img-container {
     display: flex;
-    width: 18rem;
-    height: 90%;
+    width: 100%;
+    aspect-ratio: 9 / 12;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -127,34 +133,14 @@ grid-template-columns: auto auto auto;
 
 .description {
     margin: 0.5rem 0 0 0;
-    width: 18rem;
+    width: 100%;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 1000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-wrap: wrap;
 }
 
-@media(max-width: 1020px) {
-    .products-container{
-        grid-template-columns: auto auto;
-    }
-}
-
-@media (max-width: 700px) {
-    html {
-        font-size: 9px;
-    }
-
-    .products-container{
-        grid-template-columns: auto auto auto;
-    }
-    .search-container{
-        font-size: 2rem;
-        margin: 5rem 5.5rem;
-    }
-    #search-input {
-        max-width: 50rem;
-    }
+@media (max-width: 768px) {
     .buttons{
         position: fixed;
         bottom: 0;
@@ -166,7 +152,6 @@ grid-template-columns: auto auto auto;
         background-color: rgb(106, 86, 185);
         border-color: white;
         color: white;
-        font-size: 2rem;
     }
     .active {
         background-color: white;
@@ -174,33 +159,17 @@ grid-template-columns: auto auto auto;
     }
 }
 
-@media (max-width: 615px){
-    html {
-        font-size: 7px;
-    }
-}
-
-@media (max-width: 530px){
+@media (max-width: 700px) {
     .products-container {
-        column-gap: 5px;
-        row-gap: 12px;
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 10rem));
     }
-    .filter-selection {
-        font-size: 1.8rem;
-    }
-    .store-body{
-        padding-bottom: 28rem;
+    .description {
+        font-size: .5rem;
     }
 }
 
-@media (max-width:380px){
-    html {
-        font-size: 7px;
-    }
-}
-@media (max-width:320px){
-    html {
-        font-size: 6px;
+@media (max-width: 409px) {
+    .products-container {
+        grid-template-columns: repeat(auto-fill, minmax(4rem, 6rem));
     }
 }
