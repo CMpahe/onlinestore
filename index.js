@@ -1,30 +1,27 @@
 import products from "./src/data/products.js";
+import { createCard, createImgContainer, createDescription } from "./src/logic.js";
 
 for (let i of products) {
-    //create the cards for the products
-    const card = document.createElement("div");
-    //card should have category
-    card.classList.add("card", i.category, "hidden");
-    //image div
-    const imgContainer = document.createElement("div");
-    imgContainer.classList.add("img-container");
-    //craete the image 
-    const image = document.createElement("img");
-    image.setAttribute("src", i.image);
-    imgContainer.appendChild(image);
+    
+    const card = createCard(i) // Create card 
+
+    const imgContainer = createImgContainer(i) // Create image container with the image inside
+
     card.appendChild(imgContainer);
-    //create and append the description to the image container
-    const description = document.createElement("h5");
-    description.classList.add("description")
-    description.innerHTML = (i.productName + "<br>" + "$" + i.price).toUpperCase();
+
+    // Create and append the description to the image container
+    const description = createDescription(i)
+
     card.appendChild(description);
+
     //append the card to the dom
     const productsContainer = document.querySelector(".products-container");
+
     productsContainer.appendChild(card);
 }
 
 function filterItem(value){
-    //buttons class
+    // Compare to see which button was pressed to add the class active
     let buttons = document.querySelectorAll(".filter-selection");
     buttons.forEach((button) => {
         if (value.toUpperCase() == button.innerText.toUpperCase()) {
@@ -34,14 +31,14 @@ function filterItem(value){
         }
     });
 
-    //selecting all cards 
+    // Selecting all cards 
     let cards = document.querySelectorAll(".card");
-    //if value equals All then all cards will be displayed
+    // If value equals All then all cards will be displayed
     if (value.toUpperCase() == "ALL") {
         cards.forEach((card) => {
             card.classList.remove("hide");
         })
-    //else there will be evaluated if the cards category match the value
+    // Else there will be evaluated if the cards category match the value
     } else {
         cards.forEach((card) => {
             if (card.classList.contains(value)) {
@@ -53,19 +50,18 @@ function filterItem(value){
     }
 }
 
-//search button click
+// Search button click
 
 function searchItem(){
     filterItem("nothing");
     let item = document.getElementById("search-input").value.toUpperCase();
-    //gathering the cards in a list and the description
+    // Gathering the cards in a list and the description
     let descriptions = document.querySelectorAll(".description");
 
     descriptions.forEach((description) => {
         
         let name = description.innerText;
         if (name.includes(item)) {
-            console.log(name);
             description.parentElement.classList.remove("hide");
         } else {
             description.parentElement.classList.add("hide");
@@ -73,14 +69,17 @@ function searchItem(){
     })
 };
 
+// Add the function searchItem to the search-btn
 document.getElementById("search-btn").addEventListener ("click", searchItem);
 
+// Add the feature to execute the searchItem when the Enter button is pressed
 document.addEventListener("keydown", function(event){
     if(event.code === 'Enter') {
         searchItem();
     }
 })
 
+// Make sure All products are shown when the page is loaded for the first time
 window.onload = () => {
     filterItem("All");
 }
