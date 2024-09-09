@@ -14,13 +14,21 @@ body {
     padding-bottom: 20rem;
 }
 
+.store-body h1 {
+    font-size: clamp(1.4rem, 9vw, 3.5rem);
+    font-weight: bold;
+    color: rgb(90, 70, 172);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.379);
+    margin-bottom: 0;
+}
+
 .search-container{
     display: flex;
     width: 80%;
     max-width: 600px;
     justify-content: center;
     padding: 10px;
-    margin: 2rem 2.5rem;
+    margin: 8% 2.5rem 3% 2.5rem;
     flex-direction: row;
     height: fit-content;
     gap: 15px;
@@ -170,6 +178,6 @@ row-gap: 45px;
 
 @media (max-width: 409px) {
     .products-container {
-        grid-template-columns: repeat(auto-fill, minmax(4rem, 6rem));
+        grid-template-columns: repeat(auto-fill, minmax(3.5rem, 5.5rem));
     }
 }
