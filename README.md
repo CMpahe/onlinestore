@@ -14,10 +14,10 @@ Esta es una aplicación de una tienda online desarrollada con HTML, Javascript y
 ## Capturas de Pantalla
 
 ### Sitio de escritorio
-<img src='./src/img/onlineStore.png' alt="'aptura de pantalla de la app' width='600'>
+<img src='./src/img/onlineStore.png' alt='aptura de pantalla de la app' width='400'>
 
 ### Dispositivos móviles
-<img src='./src/img/onlineStoreMobile.png' alt='Captura de pantalla de la app' width='600'>
+<img src='./src/img/onlineStoreMobile.png' alt='Captura de pantalla de la app' width='400'>
 
 ## Instalación
 
